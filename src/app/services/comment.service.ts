@@ -31,6 +31,7 @@ export class CommentService {
   }
 
   deleteComment(index) {
+    console.log(index);
     this.comment = [...this.comment.slice(0, index), ...this.comment.slice(index + 1)];
     console.log(this.comment);
   }
