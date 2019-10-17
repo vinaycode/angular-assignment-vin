@@ -1,0 +1,17 @@
+<h1 mat-dialog-title *ngFor="let obj of data">{{obj.data}}</h1>
+<div mat-dialog-content>
+	<form class="example-form" (ngSubmit)="onSubmit()">
+
+		<mat-form-field>
+			<input matInput placeholder="Your Name" type="text" required [(ngModel)]="blogPost.uname" name="uname">
+    </mat-form-field>
+
+			<mat-form-field>
+				<textarea matInput placeholder="Comment" required [(ngModel)]="blogPost.comment" name="comment"></textarea>
+			</mat-form-field>
+			<button mat-raised-button type="submit" color="primary">Post</button>
+	</form>
+</div>
+<div mat-dialog-actions>
+	<button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
+</div>

@@ -1,0 +1,207 @@
+<div class="main-body">
+	<!-- Start Main navbar -->
+
+	<!-- End Main navbar -->
+	<div class="container-box">
+		<div class="clearfix"></div>
+		<header id="main-header-wrapper">
+			<div class="container-slash">
+				<div class="row" id="header-wrapper">
+					<div class="col s12 m6 head-col">
+						<div class="section" id="blog-title">
+							<div class="widget Header" data-version="1" id="Header1">
+								<div id="header-inner">
+									<span class="toptitle">
+Group - 6 Blogger
+</span><br>
+									<h3 class="toptitle">Article Details</h3>
+								</div>
+
+								<hr>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</header>
+	</div>
+	<div class="mkcenter">
+		<div class="container container-box">
+			<div class="article-container">
+				<div class="row">
+					<div class="s12 m8">
+						<div class="main section" id="main">
+							<div class="widget Blog" data-version="1" id="Blog1">
+								<div class="blog-posts hfeed">
+									<!--Can't find substitution for tag [defaultAdStart]-->
+
+									<div class="date-outer">
+
+										<div class="date-posts">
+
+											<div class="post-outer"><button mat-raised-button color="warn" routerLink="/">
+  <mat-icon class="icon">keyboard_arrow_left</mat-icon>
+</button>
+												<br>
+
+												<!--------------------------->
+												<div class="post-start row" id="post_po_summary5405969120918013030">
+													<div class="home-post-single">
+														<!--  *ngFor="let article of article"  -->
+
+														<h2 class="post-home-title post-main-home-title">
+															{{article.title}}
+
+														</h2>
+
+														<div class="post-header card-panel">
+															<div class="post-header-line-1"></div>
+															<span class="post-author vcard">
+
+                              Posted by <i class="fa fa-user"></i>
+<span class="fn">
+{{article.writer}}
+</span>
+															</span>
+															<span class="post-timestamp">
+
+                             on <i class="fa fa-clock-o"></i>
+<abbr class="published" title="{{article.ltime}}">
+{{article.stime}}
+</abbr>
+</span>
+															<span class="post-comment-link">
+{{article.comments}} comments
+</span>
+														</div>
+
+														<div class="main-post-body">
+															<div dir="ltr" style="text-align: left;" trbidi="on">
+																<div class="separator"
+																	style="clear: both; text-align: center;">
+																	<img class="bigimg" border="0" src="{{article.limgpath}}" >
+  </div>
+																	<br>
+																	<div class="post ">
+																		{{article.content}}
+																	</div>
+																</div>
+															</div>
+
+															<table
+																style="text-align:center; float:right; display:block; ">
+																<tr>
+																	<td>{{article.likes}}</td>
+																	<td>{{article.dislikes}}</td>
+																	<td>{{article.comments}}</td>
+																</tr>
+																<tr>
+																	<td>
+																		<mat-icon class="icon">thumb_up</mat-icon>
+																	</td>
+																	<td>
+																		<mat-icon class="icon">thumb_down</mat-icon>
+																	</td>
+																	<td>
+																		<mat-icon class="icon">comment</mat-icon>
+																	</td>
+																</tr>
+															</table>
+															<div class="clearfix"></div>
+															<br><br><br>
+															<div class="comments card-panel" id="comments">
+																<h4>
+																	Comments : <button button="submit" mat-raised-button color="primary" (click)="openDialog($event, article.id)">
+            <mat-icon>add</mat-icon> Add Comment
+          </button>
+																</h4>
+															</div>
+															<mat-card class="card">
+																<div *ngFor="let com1 of comments">
+																	<div class="media">
+																		<img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Avatar">
+																		<div class="media-body">
+																			<h5 class="mt-0 font-weight-bold blue-text">
+																				{{com1.uname}}<small>{{com1.date_posted  | date: 'd/M/y'}}</small>
+																			</h5>
+
+																			{{com1.comment}}
+																			<a style="float:right;"
+																				(click)="deleteComment(com1.id)"
+																				type="button">
+																				<mat-icon class="icon">delete</mat-icon>
+																			</a>
+																		</div>
+																	</div>
+																	<hr>
+																</div>
+
+															</mat-card>
+
+
+
+														</div>
+
+													</div>
+
+												</div>
+
+
+											</div>
+										</div>
+
+										<!--Can't find substitution for tag [adEnd]-->
+									</div>
+								</div>
+							</div>
+							<!-- END Loop -->
+						</div>
+						<!-- END Content -->
+						<!-- end sidebar widgets -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Container -->
+		<div id="footer">
+			<div class="container">
+				<p class="footer-link">
+					©
+					<a href="#">
+						Material Design Blog
+					</a>
+					2019 . Powered by
+					<a href="#" rel="nofollow" title="Blogger">
+						Prashant
+					</a>
+					.
+					<a href="#" id="Mandatory" target="_blank" title="Blogger templates">
+						Vinay
+					</a>
+					.
+					<a href="#" id="Mandatory" target="_blank" title="Blogger templates">
+						Deepak
+					</a>
+					.
+					<a href="#" id="Mandatory" target="_blank" title="Blogger templates">
+						Madhavi
+					</a>
+					.
+					<a href="#" id="Mandatory" target="_blank" title="Blogger templates">
+						Darshan
+					</a>
+					.
+					<a href="#" id="Mandatory" target="_blank" title="Blogger templates">
+						Abhikansha
+					</a>
+
+				</p>
+			</div>
+		</div>
+		<!-- END Footer -->
+		<div class="drag-target"
+			style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+		</div>
+	</div>
