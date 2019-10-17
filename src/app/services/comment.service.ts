@@ -31,9 +31,14 @@ export class CommentService {
   }
 
   deleteComment(index) {
-    console.log(index);
-    this.comment = [...this.comment.slice(0, index), ...this.comment.slice(index + 1)];
-    console.log(this.comment);
+    
+    this.artidArray = this.comment.filter(function(object) {
+      //console.log("obj artid "+object.artid);
+      if(object.id!=index){
+          return object;
+      }
+    });
+    this.comment =this.artidArray;
   }
 
   commentLength() {
