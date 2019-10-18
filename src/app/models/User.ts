@@ -1,4 +1,3 @@
-/*
 export class User {
   id: number;
   name: string;
@@ -18,4 +17,3 @@ export class Dislikes {
 export class MyComment {
   comid: number;
 }
-*/

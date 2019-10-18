@@ -1,4 +1,3 @@
-/*
 import {Injectable} from '@angular/core';
 import {User} from '../models/User';
 import {Observable, of} from 'rxjs';
@@ -36,4 +35,4 @@ export class UserService {
     return this.user.length;
   }
 }
-*/
+

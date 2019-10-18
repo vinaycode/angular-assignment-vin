@@ -13,7 +13,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRouters} from './app.routes';
 import {ArticleService} from './services/article.service';
 import {CommentService} from './services/comment.service';
-//import {UserService} from './services/user.service';
+import {UserService} from './services/user.service';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
