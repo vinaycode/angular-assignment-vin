@@ -14,9 +14,9 @@ export class MyactivityComponent {
   constructor(private articleService: UserService) {
   }
 
-  displayedLikeColumns = ['name'];
-  displayedDislikeColumns = ['name'];
-  displayedCommentColumns = ['name', 'name', 'name'];
+//  displayedLikeColumns = ['name'];
+ // displayedDislikeColumns = ['name'];
+ // displayedCommentColumns = ['name', 'name', 'name'];
   dataSource = new ArticleDataSource(this.articleService);
 }
 
