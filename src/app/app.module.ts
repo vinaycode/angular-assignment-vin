@@ -33,7 +33,7 @@ import {FormsModule} from '@angular/forms';
     AppRouters,
     FormsModule,HttpModule
   ],
-  providers: [ArticleService,CommentService],
+  providers: [ArticleService,CommentService,UserService],
   bootstrap: [AppComponent],
   entryComponents: [
     CommentDialogComponent
