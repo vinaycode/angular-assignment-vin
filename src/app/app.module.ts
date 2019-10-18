@@ -6,27 +6,23 @@ import {MaterialModule} from './material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {WelcomeComponent} from './welcome/welcome.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import {MyactivityComponent} from './myactivity/myactivity.component';
 import {CommentDialogComponent} from './comment-dialog/comment-dialog.component';
 import {ArticleDetailComponent} from './articleDetails/artdetails.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRouters} from './app.routes';
-import {DataService} from './data/data.service';
 import {ArticleService} from './services/article.service';
 import {CommentService} from './services/comment.service';
-import {AuthService} from './auth.service';
-import {PostDialogComponent} from './post-dialog/post-dialog.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    DashboardComponent,
+    MyactivityComponent,
     ArticleDetailComponent,
     CommentDialogComponent,
-    NotFoundComponent,
-    PostDialogComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,10 +32,10 @@ import {FormsModule} from '@angular/forms';
     AppRouters,
     FormsModule,HttpModule
   ],
-  providers: [DataService, AuthService, ArticleService,CommentService],
+  providers: [ArticleService,CommentService],
   bootstrap: [AppComponent],
   entryComponents: [
-    PostDialogComponent,CommentDialogComponent
+    CommentDialogComponent
   ]
 })
 export class AppModule {}
