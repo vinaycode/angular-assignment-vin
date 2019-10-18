@@ -23,29 +23,84 @@ Group - 6 Blogger
 			<div class="clearfix"></div>
 		</header>
 	</div>
+
+
 	<div class="mkcenter">
 		<div class="container container-box">
 			<div class="row">
-				<div class="widget Blog" data-version="1" id="Blog1">
-					<div class="post-start row" id="post_po_summary5405969120918013030">
-						<div class="home-post-single">
-							My Liked Articles
+				<mat-card class="card">
+					<mat-card-title>
+						<h3>My Liked Articles</h3>
+					</mat-card-title>
+					<mat-card-content>
+						<div class="example-container mat-elevation-z8">
+							<mat-table #table [dataSource]="dataSource">
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+								</ng-container>
+								<mat-header-row *matHeaderRowDef="displayedLikeColumns"></mat-header-row>
+								<mat-row *matRowDef="let row; columns: displayedLikeColumns;"></mat-row>
+							</mat-table>
 						</div>
-					</div>
-					<div class="post-start row" id="post_po_summary5405969120918013030">
-						<div class="home-post-single">
-							My Disliked Articles
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+		<div class="container container-box">
+			<div class="row">
+				<mat-card class="card">
+					<mat-card-title>
+						<h3>My Disliked Articles</h3>
+					</mat-card-title>
+					<mat-card-content>
+						<div class="example-container mat-elevation-z8">
+							<mat-table #table [dataSource]="dataSource">
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.name}}
+									</mat-cell>
+								</ng-container>
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+								</ng-container>
+								<mat-header-row *matHeaderRowDef="displayedDislikeColumns"></mat-header-row>
+								<mat-row *matRowDef="let row; columns: displayedDislikeColumns;"></mat-row>
+							</mat-table>
 						</div>
-					</div>
-					<div class="post-start row" id="post_po_summary5405969120918013030">
-						<div class="home-post-single">
-							My Comments
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+		<div class="container container-box">
+			<div class="row">
+				<mat-card class="card">
+					<mat-card-title>
+						<h3>My Comments</h3>
+					</mat-card-title>
+					<mat-card-content>
+						<div class="example-container mat-elevation-z8">
+							<mat-table #table [dataSource]="dataSource">
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.name}}
+									</mat-cell>
+								</ng-container>
+								<ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+								</ng-container>
+                <ng-container matColumnDef="name">
+									<mat-header-cell *matHeaderCellDef> My Comment </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+								</ng-container>
+								<mat-header-row *matHeaderRowDef="displayedCommentColumns"></mat-header-row>
+								<mat-row *matRowDef="let row; columns: displayedCommentColumns;"></mat-row>
+							</mat-table>
 						</div>
-					</div>
-				</div>
-				<!-- END Content -->
-				<!-- end sidebar widgets -->
+					</mat-card-content>
+				</mat-card>
 			</div>
 		</div>
 	</div>
-</div>

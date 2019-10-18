@@ -13,6 +13,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRouters} from './app.routes';
 import {ArticleService} from './services/article.service';
 import {CommentService} from './services/comment.service';
+import {UserService} from './services/user.service';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -32,7 +33,7 @@ import {FormsModule} from '@angular/forms';
     AppRouters,
     FormsModule,HttpModule
   ],
-  providers: [ArticleService,CommentService],
+  providers: [ArticleService,CommentService,UserService],
   bootstrap: [AppComponent],
   entryComponents: [
     CommentDialogComponent

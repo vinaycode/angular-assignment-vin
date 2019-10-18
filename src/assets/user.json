@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "User One",
+    "likes": [
+      {
+        "lartid": 1
+      },
+      {
+        "lartid": 2
+      }
+    ],
+    "dislikes": [
+      {
+        "dartid": 1
+      },
+      {
+        "dartid": 2
+      }
+    ],
+    "comments": [
+      {
+        "comid": 1
+      },
+      {
+        "comid": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "User Two",
+    "likes": [
+      {
+        "lartid": 1
+      },
+      {
+        "lartid": 2
+      }
+    ],
+    "dislikes": [
+      {
+        "dartid": 1
+      },
+      {
+        "dartid": 2
+      }
+    ],
+    "comments": [
+      {
+        "comid": 1
+      },
+      {
+        "comid": 2
+      }
+    ]
+  },
+]
