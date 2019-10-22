@@ -7,13 +7,13 @@ export class User {
 }
 
 export class Likes {
-  lartid: number;
+  public lartid: number;
 }
 
 export class Dislikes {
-  dartid: number;
+  public dartid: number;
 }
 
 export class MyComment {
-  comid: number;
+  public comid: number;
 }

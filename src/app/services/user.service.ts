@@ -8,9 +8,13 @@ export class UserService {
   usridArray: User[] = [];
   private user : User[] = data;
   public userid: number;
-    
+  
   constructor() {
     this.userid = 1;
+  }
+
+  getUID() {
+    return this.userid;
   }
 
   getData(): Observable<User[]> {
@@ -28,7 +32,13 @@ export class UserService {
   }
 
   addUser(data) {
-    this.user.push(data);
+    //this.user.push(data);
+    let updateItem = this.user.find(this.findIndexToUpdate, data.id);
+    let index = this.user.indexOf(updateItem);
+    this.user[index] = data;
+  }
+  findIndexToUpdate(data) {
+        return data.id === this;
   }
 
   userLength() {
