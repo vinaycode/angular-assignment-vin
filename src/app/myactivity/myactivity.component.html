@@ -81,21 +81,18 @@ Group - 6 Blogger
 							<mat-table #table [dataSource]="dataSourceComments">
 								<ng-container matColumnDef="dtp">
 									<mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'd/M/y'}}
+									<mat-cell *matCellDef="let element"> {{element.dtp  | date: 'd/M/y'}}
 									</mat-cell>
 								</ng-container>
 								<ng-container matColumnDef="name">
 									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.artid}} </mat-cell>
+									<mat-cell *matCellDef="let element"> {{element.arti}} </mat-cell>
 								</ng-container>
                 <ng-container matColumnDef="com">
 									<mat-header-cell *matHeaderCellDef> My Comment </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.comment}} </mat-cell>
+									<mat-cell *matCellDef="let element"> {{element.com}} </mat-cell>
 								</ng-container>
-                    <ng-container matColumnDef="com1">
-									<mat-header-cell *matHeaderCellDef> My Comment1 </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.user.name}} </mat-cell>
-								</ng-container>
+                
 								<mat-header-row *matHeaderRowDef="displayedCommentColumns"></mat-header-row>
 								<mat-row *matRowDef="let row; columns: displayedCommentColumns;"></mat-row>
 							</mat-table>

@@ -37,7 +37,6 @@ export class WelcomeComponent implements OnInit {
       }
     );
 
-    console.log("UID : "+this.userv.getUID());
     this.userv.getDataid(this.userv.getUID()).subscribe(
       (user: User[]) => {
         console.log("Success! Get User Successful! (via Observable)");
@@ -65,12 +64,10 @@ export class WelcomeComponent implements OnInit {
   onDisLikeClick(e,art){
     art.dislikes++;
     this.service.addArticles(art);
-    console.log(this.user[0]);
     this.mydislikes = new Dislikes();
     this.mydislikes.dartid = art.id;
     this.liklength = this.user[0].dislikes.length;
     this.user[0].dislikes[this.liklength] = this.mydislikes;
-    console.log(this.user[0]);
   }
 
 }

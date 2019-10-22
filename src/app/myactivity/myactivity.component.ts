@@ -27,12 +27,12 @@ export class MyactivityComponent {
   ) {
     this.displayedLikeColumns = ["name"];
     this.displayedDislikeColumns = ["name"];
-    this.displayedCommentColumns = ['dtp', 'name', 'com','com1'];
+    this.displayedCommentColumns = ["dtp", "name", "com"];
   }
 
-  dataSourceLiks = new UserDataSourceLiks(this.userService, this.articleService);
-  dataSourceDisliks = new UserDataSourceDisliks(this.userService, this.articleService);
-  dataSourceComments = new UserDataSourceComments(this.userService, this.articleService, this.commentService);
+  dataSourceLiks = new UserDataSourceLiks(this.userService,this.articleService);
+  dataSourceDisliks = new UserDataSourceDisliks(this.userService,this.articleService);
+  dataSourceComments = new UserDataSourceComments(this.userService,this.articleService,this.commentService);
 }
 
 export class UserDataSourceLiks extends DataSource<any> {
@@ -66,7 +66,6 @@ export class UserDataSourceLiks extends DataSource<any> {
 
     for (let u of this.user) {
       for (let l of u.likes) {
-
         this.articleService.getArticle(l.lartid).subscribe(
           (article: Article) => {
             console.log("Success! Get Article Successful!");
@@ -136,11 +135,10 @@ export class UserDataSourceDisliks extends DataSource<any> {
   disconnect() {}
 }
 
-
 export class UserDataSourceComments extends DataSource<any> {
   user: User[] = [];
   article: Article[] = [];
-  cat:ComArtiTemp[] = [];
+  cat: ComArtiTemp[] = [];
   comment: Comment[] = [];
   error: AppError;
   x: number = 0;
@@ -185,22 +183,25 @@ export class UserDataSourceComments extends DataSource<any> {
       }
     }
 
-    for(let c of this.comment){
-      let c:ComArtiTemp = new ComArtiTemp();
-      c.com = c.comment;
-      c.arti = "";
-      c.dtp = new Date();
-        this.cat[this.y] = c;
-        this.y++;
-        console.log("COMMM ");
-        console.log(c);
+    for (let ca of this.comment) {
+      let c: ComArtiTemp = new ComArtiTemp();
+      c.com = ca.comment;
+      this.articleService.getArticle(ca.artid).subscribe(
+        (article: Article) => {
+          console.log("Success! Get Article Successful!");
+          c.arti = article.title;
+        },
+        (error: AppError) => {
+          console.log("Failed! Error occurred when getting article.", error);
+        }
+      );
+      c.dtp = ca.date_posted;
+      this.cat[this.y] = c;
+      this.y++;
     }
-
-    console.log(this.comment);
 
     return of<ComArtiTemp[]>(this.cat);
   }
 
   disconnect() {}
 }
-

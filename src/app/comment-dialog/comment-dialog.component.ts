@@ -4,6 +4,9 @@ import { Article } from '../models/Article';
 import { AppError } from '../common/app-error';
 import { ArticleService } from '../services/article.service';
 import {CommentService} from '../services/comment.service';
+import { MyComment } from '../models/User';
+import { User } from '../models/User';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-comment-dialog',
@@ -12,6 +15,10 @@ import {CommentService} from '../services/comment.service';
 })
 export class CommentDialogComponent {
   article: Article = new Article();
+  mycomments: MyComment;
+  comlength:number;
+  user: User[] = [];
+  error: AppError;
   blogPost = {
     id: 0,
     artid: 0,
@@ -24,9 +31,27 @@ export class CommentDialogComponent {
   constructor(private service: ArticleService,
     public dialogRef: MatDialogRef<CommentDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public dataService: CommentService
+    public dataService: CommentService,private userv: UserService
   ) {
     data.forEach((data)=>  this.blogPost.artid = data.artid);
+  }
+
+    ngOnInit() {
+    
+    console.log("UID : "+this.userv.getUID());
+    this.userv.getDataid(this.userv.getUID()).subscribe(
+      (user: User[]) => {
+        console.log("Success! Get User Successful! (via Observable)");
+        this.user = user;
+      },
+      (error: AppError) => {
+        this.error = error;
+        console.log(
+          "Failed! Error occurred when getting User. (via Observable)",
+          error
+        );
+      }
+    );
   }
 
   onNoClick(): void {
@@ -49,6 +74,11 @@ export class CommentDialogComponent {
       );
       this.article.comments++;
     this.service.addArticles(this.article);
+    
+    this.mycomments = new MyComment();
+    this.mycomments.comid = this.blogPost.id;
+    this.comlength = this.user[0].comments.length;
+    this.user[0].comments[this.comlength] = this.mycomments;
 
   }
 }
