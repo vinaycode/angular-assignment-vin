@@ -33,10 +33,10 @@ Group - 6 Blogger
 					</mat-card-title>
 					<mat-card-content>
 						<div class="example-container mat-elevation-z8">
-							<mat-table #table [dataSource]="dataSource">
+							<mat-table #table [dataSource]="dataSourceLiks">
 								<ng-container matColumnDef="name">
 									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+									<mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
 								</ng-container>
 								<mat-header-row *matHeaderRowDef="displayedLikeColumns"></mat-header-row>
 								<mat-row *matRowDef="let row; columns: displayedLikeColumns;"></mat-row>
@@ -54,10 +54,10 @@ Group - 6 Blogger
 					</mat-card-title>
 					<mat-card-content>
 						<div class="example-container mat-elevation-z8">
-							<mat-table #table [dataSource]="dataSource">
+							<mat-table #table [dataSource]="dataSourceDisliks">
 								<ng-container matColumnDef="name">
 									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+									<mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
 								</ng-container>
 								<mat-header-row *matHeaderRowDef="displayedDislikeColumns"></mat-header-row>
 								<mat-row *matRowDef="let row; columns: displayedDislikeColumns;"></mat-row>
@@ -68,7 +68,7 @@ Group - 6 Blogger
 			</div>
 		</div>
 
-<!--
+
 
 		<div class="container container-box">
 			<div class="row">
@@ -78,19 +78,23 @@ Group - 6 Blogger
 					</mat-card-title>
 					<mat-card-content>
 						<div class="example-container mat-elevation-z8">
-							<mat-table #table [dataSource]="dataSource">
-								<ng-container matColumnDef="name">
+							<mat-table #table [dataSource]="dataSourceComments">
+								<ng-container matColumnDef="dtp">
 									<mat-header-cell *matHeaderCellDef> Date Posted </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.name}}
+									<mat-cell *matCellDef="let element"> {{element.date_posted  | date: 'd/M/y'}}
 									</mat-cell>
 								</ng-container>
 								<ng-container matColumnDef="name">
 									<mat-header-cell *matHeaderCellDef> Article Name </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+									<mat-cell *matCellDef="let element"> {{element.artid}} </mat-cell>
 								</ng-container>
-                <ng-container matColumnDef="name">
+                <ng-container matColumnDef="com">
 									<mat-header-cell *matHeaderCellDef> My Comment </mat-header-cell>
-									<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+									<mat-cell *matCellDef="let element"> {{element.comment}} </mat-cell>
+								</ng-container>
+                    <ng-container matColumnDef="com1">
+									<mat-header-cell *matHeaderCellDef> My Comment1 </mat-header-cell>
+									<mat-cell *matCellDef="let element"> {{element.user.name}} </mat-cell>
 								</ng-container>
 								<mat-header-row *matHeaderRowDef="displayedCommentColumns"></mat-header-row>
 								<mat-row *matRowDef="let row; columns: displayedCommentColumns;"></mat-row>
@@ -101,6 +105,5 @@ Group - 6 Blogger
 			</div>
 		</div>
 
--->
 
 	</div>

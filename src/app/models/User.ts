@@ -17,3 +17,9 @@ export class Dislikes {
 export class MyComment {
   public comid: number;
 }
+
+export class ComArtiTemp {
+  dtp: Date;
+  com: string;
+  arti: string;
+}

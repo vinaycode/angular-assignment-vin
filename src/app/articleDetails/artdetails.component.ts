@@ -30,7 +30,6 @@ export class ArticleDetailComponent implements OnInit {
 
 
   displayedColumns = ['uname', 'comment', 'date_posted', 'delete'];
-  dataSource: CommentDataSource;
 
   ngOnInit() {
     this.route.params.subscribe(params => {

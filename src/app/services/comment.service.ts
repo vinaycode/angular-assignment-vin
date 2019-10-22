@@ -5,7 +5,7 @@ import data from '../../assets/comment.json';
 
 @Injectable()
 export class CommentService {
-  artidArray: Comment[] = [];
+  comidArray: Comment[] = [];
   private comment : Comment[] = data;
     
   constructor() {
@@ -15,15 +15,24 @@ export class CommentService {
     return of<Comment[]>(this.comment);
   }
 
+  getDatabyid(id): Observable<Comment> {
+this.comidArray = this.comment.filter(function(object) {
+      if(object.id===id){
+          return object;
+      }
+    });
+        
+    return of<Comment>(this.comidArray[0]);
+  }
   
   getDataid(artid): Observable<Comment[]> {
-    this.artidArray = this.comment.filter(function(object) {
+    this.comidArray = this.comment.filter(function(object) {
       //console.log("obj artid "+object.artid);
       if(object.artid===artid){
           return object;
       }
     });
-    return of<Comment[]>(this.artidArray);
+    return of<Comment[]>(this.comidArray);
   }
 
   addComment(data) {
@@ -32,13 +41,13 @@ export class CommentService {
 
   deleteComment(index) {
     
-    this.artidArray = this.comment.filter(function(object) {
+    this.comidArray = this.comment.filter(function(object) {
       //console.log("obj artid "+object.artid);
       if(object.id!=index){
           return object;
       }
     });
-    this.comment =this.artidArray;
+    this.comment =this.comidArray;
   }
 
   commentLength() {
