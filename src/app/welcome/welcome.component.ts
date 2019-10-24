@@ -52,7 +52,7 @@ export class WelcomeComponent implements OnInit {
     );
   }
 
-  onLikeClick(e,art){
+  onLikeClick(art){
     art.likes++;
     this.service.addArticles(art);
     this.mylikes = new Likes();
@@ -61,7 +61,7 @@ export class WelcomeComponent implements OnInit {
     this.user[0].likes[this.liklength] = this.mylikes;
   }
 
-  onDisLikeClick(e,art){
+  onDisLikeClick(art){
     art.dislikes++;
     this.service.addArticles(art);
     this.mydislikes = new Dislikes();

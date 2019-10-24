@@ -59,7 +59,7 @@ Group - 6 Blogger
 															<span class="post-timestamp">
 
                             on <i class="fa fa-clock-o"></i>
-<abbr class="published" title="{{art.ltime}}">
+<abbr class="published" title="{{art.ltime | date: 'd/M/y'}}">
 {{art.stime}}
 </abbr>
 </span>
@@ -88,9 +88,9 @@ Group - 6 Blogger
 														</tr>
 														<tr>
 															<td>
-																<button mat-raised-button color="primary" (click)="onLikeClick($event, art)"><mat-icon class="icon">thumb_up</mat-icon></button>
+																<button mat-raised-button color="primary" (click)="onLikeClick(art)"><mat-icon class="icon">thumb_up</mat-icon></button>
 															</td>
-															<td><button mat-raised-button color="warn" (click)="onDisLikeClick($event, art)"><mat-icon class="icon">thumb_down</mat-icon></button>
+															<td><button mat-raised-button color="warn" (click)="onDisLikeClick(art)"><mat-icon class="icon">thumb_down</mat-icon></button>
 															</td>
 															<td>
 																<mat-icon class="icon">comment</mat-icon>
