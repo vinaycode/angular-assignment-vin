@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 import { AppError } from "../common/app-error";
 import { Article } from '../models/Article';
+import { ChildComponent } from './child-component/child-comment.component';
 import { User } from '../models/User';
 import { Likes } from '../models/User';
 import { Dislikes } from '../models/User';
@@ -13,6 +14,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+  @ViewChildren(ChildComponent) coms: QueryList<ChildComponent>;
   articles: Article[] = [];
   user: User[] = [];
   liklength:number;
@@ -69,5 +71,14 @@ export class WelcomeComponent implements OnInit {
     this.liklength = this.user[0].dislikes.length;
     this.user[0].dislikes[this.liklength] = this.mydislikes;
   }
+
+  onComclick(art){
+
+  }
+  
+  ngAfterViewInit() {
+    console.log(this.coms);
+  }
+
 
 }
