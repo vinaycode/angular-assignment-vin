@@ -1,0 +1,20 @@
+.media .avatar {
+    width: 60px;
+}
+.media .mt-0 small{
+  font-size: 12px;
+  margin-left: 10px;
+}
+.media{display:-ms-flexbox;display:flex;-ms-flex-align:start;align-items:flex-start}
+.media-body{-ms-flex:1;flex:1}
+.media h5{font-size:16px}
+.d-flex{display:-ms-flexbox!important;display:flex!important}
+.rounded-circle{border-radius:50%!important}
+.z-depth-1-half{box-shadow:0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15)!important}
+.mr-3{margin-right:1rem!important}
+.mt-0{margin-top:0!important}
+.font-weight-bold{font-weight:700!important}
+.blue-text{color:#2196f3!important}
+.shadow-textarea textarea.form-control::placeholder {
+      font-weight: 300;
+}

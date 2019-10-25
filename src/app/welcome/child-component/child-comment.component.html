@@ -1,1 +1,22 @@
-<h2>{{"Hello " + cart}}</h2>
+	<hr>
+  <mat-card class="card">
+																<div *ngFor="let com1 of comments">
+																	<div class="media">
+																		<img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://cdn.jsdelivr.net/gh/vinaycode/angular-assignment-vin@master/src/assets/avtor.JPG" alt="Avatar">
+																		<div class="media-body">
+																			<h5 class="mt-0 font-weight-bold blue-text">
+																				{{com1.uname}}<small>{{com1.date_posted  | date: 'd/M/y'}}</small>
+																			</h5>
+
+																			{{com1.comment}}
+																			<a style="float:right;"
+																				(click)="deleteComment(com1.id)"
+																				type="button">
+																				<mat-icon class="icon">delete</mat-icon>
+																			</a>
+																		</div>
+																	</div>
+																	<hr>
+																</div>
+
+															</mat-card>
