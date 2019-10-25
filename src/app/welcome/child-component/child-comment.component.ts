@@ -8,7 +8,7 @@ import { AppError } from '../../common/app-error';
   templateUrl: './child-comment.component.html',
   styleUrls: ['./child-comment.component.css']
 })
-export class ChildCommentComponent {
+export class ChildComponent {
   @Input() public cart:number;
   comments: Comment[] = [];
   constructor(private dataService: CommentService,) {

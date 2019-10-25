@@ -9,7 +9,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {MyactivityComponent} from './myactivity/myactivity.component';
 import {CommentDialogComponent} from './comment-dialog/comment-dialog.component';
 import {ArticleDetailComponent} from './articleDetails/artdetails.component';
-import {ChildCommentComponent} from './welcome/child-component/child-comment.component';
+import {ChildComponent} from './welcome/child-component/child-comment.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRouters} from './app.routes';
 import {ArticleService} from './services/article.service';
@@ -24,7 +24,7 @@ import {FormsModule} from '@angular/forms';
     MyactivityComponent,
     ArticleDetailComponent,
     CommentDialogComponent,
-    ChildCommentComponent,
+    ChildComponent,
     NotFoundComponent
   ],
   imports: [
