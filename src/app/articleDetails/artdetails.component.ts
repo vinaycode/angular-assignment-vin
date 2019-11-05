@@ -43,7 +43,7 @@ export class ArticleDetailComponent implements OnInit {
         console.log(
           `Article id is not a number (or) is 0. (id = ${params['id']})`
         );
-        this.router.navigate(['/not-found']);
+        this.router.navigate(['/not-found']);    // remove for testing
         return;
       }
 

@@ -6,9 +6,47 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+declare var jasmine;
+import jasmineRequire from 'jasmine-core/lib/jasmine-core/jasmine.js';
+window['jasmineRequire'] = jasmineRequire;
+import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
+import 'jasmine-core/lib/jasmine-core/boot.js';
+import 'zone.js/dist/zone-testing';
+import { getTestBed } from '@angular/core/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+import './test.ts'
+
+
 if (environment.production) {
   enableProdMode();
 }
+
+function bootstrap () {
+  // this looks like workaround to get 100% fresh clear run. 
+  // window['jasmineRef'] does nothing - it is just a flag 
+  // if it is not defined - we have clear run
+  // if not - lets reload
+  if (window['jasmineRef']) { 
+    location.reload();
+    return;
+  } else {
+    window.onload(undefined); // overwrited by jasmine, initialize env    
+    window['jasmineRef'] = jasmine.getEnv();
+  }
+
+  // Initialize the Angular testing environment.
+  getTestBed().initTestEnvironment(
+    BrowserDynamicTestingModule,
+    platformBrowserDynamicTesting()
+  );
+}
+//////--------------------------------
+//bootstrap();       // this will be called for Testing
+
+
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   // Ensure Angular destroys itself on hot reloads.
@@ -19,3 +57,6 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
 
   // Otherwise, log the boot error
 }).catch(err => console.error(err));
+
+
+

@@ -17,6 +17,10 @@ import {CommentService} from './services/comment.service';
 import {UserService} from './services/user.service';
 import {FormsModule} from '@angular/forms';
 
+import { ArticleMockService } from "./mock/article.mock.service";
+import { UserMockService } from "./mock/user.mock.service";
+import { CommentMockService } from "./mock/comment.mock.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,7 @@ import {FormsModule} from '@angular/forms';
     AppRouters,
     FormsModule,HttpModule
   ],
-  providers: [ArticleService,CommentService,UserService],
+  providers: [ArticleService,CommentService,UserService, ArticleMockService, UserMockService, CommentMockService],
   bootstrap: [AppComponent],
   entryComponents: [
     CommentDialogComponent

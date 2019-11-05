@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, QueryList, Output } from '@angular/core';
 import { AppError } from "../common/app-error";
 import { Article } from '../models/Article';
 import { ChildComponent } from './child-component/child-comment.component';
