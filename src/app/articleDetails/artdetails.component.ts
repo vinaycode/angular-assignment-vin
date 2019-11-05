@@ -10,6 +10,10 @@ import {CommentDialogComponent} from '../comment-dialog/comment-dialog.component
 import {MatDialog} from '@angular/material';
 import {Observable} from 'rxjs/Observable';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 
 @Component({
   selector: 'app-art-detail',
@@ -103,6 +107,54 @@ deleteComment(id) {
     });
   }
 
+  generatePdf(){
+    //   https://www.ngdevelop.tech/angular-8-export-to-pdf-using-pdfmake/
+
+ // const documentDefinition = { content: 'This is an sample PDF printed with pdfMake' };    //  just to check
+  const documentDefinition = this.getDocumentDefinition();
+ // pdfMake.createPdf(documentDefinition).download();    // download the pdf
+ // pdfMake.createPdf(documentDefinition).print();     //  direct send to print
+  pdfMake.createPdf(documentDefinition).open();      //  open in new tab
+ // pdfMake.createPdf(documentDefinition).open({}, window);    //  open in same window
+ }
+
+ getDocumentDefinition() {
+    return {
+      content: [
+        {
+          text: this.article.title,
+          bold: true,
+          fontSize: 20,
+          alignment: 'center',
+          margin: [0, 0, 0, 0]
+        },
+        {
+          text: "Posted by "+this.article.writer+" on "+this.article.stime,
+          fontSize: 10,
+          alignment: 'center',
+          background:'#eee',
+          margin: [0, 0, 0, 20]
+        },
+        {
+          text: this.article.content,
+          fontSize: 14,
+          alignment: 'left',
+          margin: [0, 0, 0, 20]
+        },
+        {
+          text: "Likes : "+this.article.likes,
+          fontSize: 14,
+          alignment: 'right',
+          margin: [0, 0, 0, 10]
+        },
+        {
+          text: "Dislikes : "+this.article.dislikes,
+          fontSize: 14,
+          alignment: 'right',
+          margin: [0, 0, 0, 10]
+        }]
+    };
+ }
 }
 
 

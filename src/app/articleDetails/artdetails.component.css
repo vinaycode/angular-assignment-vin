@@ -93,6 +93,14 @@ text-overflow: ellipsis;
 
 a {
   cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+a:hover{
+  text-decoration: none;
+}
+a:visited{
+  color: gray;
 }
 
 .widget {

@@ -17,8 +17,11 @@
     "@angular/router": "8.2.10",
     "auth0-js": "9.11.3",
     "core-js": "2.6.10",
+    "jasmine-core": "^3.5.0",
+    "pdfmake": "^0.1.62",
     "rxjs": "6.5.3",
     "rxjs-compat": "^6.5.3",
+    "tslib": "^1.10.0",
     "zone.js": "0.9.1"
   },
   "scripts": {
