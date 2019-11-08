@@ -73,7 +73,7 @@ export class CommentDialogComponent {
         }
       );
       this.article.comments++;
-    this.service.addArticles(this.article);
+    this.service.updateArticle(this.article);
     
     this.mycomments = new MyComment();
     this.mycomments.comid = this.blogPost.id;

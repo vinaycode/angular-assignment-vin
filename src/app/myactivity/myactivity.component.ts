@@ -48,9 +48,9 @@ export class UserDataSourceLiks extends DataSource<any> {
   }
 
   connect(): Observable<Article[]> {
-    this.user = this.userService.getDataid(this.userService.userid);
+    this.user = this.userService.getUserid(this.userService.userid);
 
-    this.userService.getDataid(this.userService.getUID()).subscribe(
+    this.userService.getUserid(this.userService.getUID()).subscribe(
       (user: User[]) => {
         console.log("Success! Get User Successful! (via Observable)");
         this.user = user;
@@ -98,9 +98,9 @@ export class UserDataSourceDisliks extends DataSource<any> {
   }
 
   connect(): Observable<Article[]> {
-    this.user = this.userService.getDataid(this.userService.userid);
+    this.user = this.userService.getUserid(this.userService.userid);
 
-    this.userService.getDataid(this.userService.getUID()).subscribe(
+    this.userService.getUserid(this.userService.getUID()).subscribe(
       (user: User[]) => {
         console.log("Success! Get User Successful! (via Observable)");
         this.user = user;
@@ -152,9 +152,9 @@ export class UserDataSourceComments extends DataSource<any> {
   }
 
   connect(): Observable<ComArtiTemp[]> {
-    this.user = this.userService.getDataid(this.userService.userid);
+    this.user = this.userService.getUserid(this.userService.userid);
 
-    this.userService.getDataid(this.userService.getUID()).subscribe(
+    this.userService.getUserid(this.userService.getUID()).subscribe(
       (user: User[]) => {
         console.log("Success! Get User Successful! (via Observable)");
         this.user = user;
@@ -170,7 +170,7 @@ export class UserDataSourceComments extends DataSource<any> {
 
     for (let u of this.user) {
       for (let c of u.comments) {
-        this.commentService.getDatabyid(c.comid).subscribe(
+        this.commentService.getCommentbyid(c.comid).subscribe(
           (comment: Comment) => {
             console.log("Success! Get Comment Successful!");
             this.comment[this.x] = comment;
