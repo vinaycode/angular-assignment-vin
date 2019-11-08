@@ -15,7 +15,7 @@ export class ChildComponent {
     console.log(this.cart);
   }
   ngOnInit() {
-    this.dataService.getDataid(this.cart).subscribe(
+    this.dataService.getCommentbyartid(this.cart).subscribe(
         (comments: Comment) => {
           console.log('Success! Get Comment Successful!');
           this.comments = comments;

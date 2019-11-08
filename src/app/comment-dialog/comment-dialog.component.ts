@@ -39,7 +39,7 @@ export class CommentDialogComponent {
     ngOnInit() {
     
     console.log("UID : "+this.userv.getUID());
-    this.userv.getDataid(this.userv.getUID()).subscribe(
+    this.userv.getUserid(this.userv.getUID()).subscribe(
       (user: User[]) => {
         console.log("Success! Get User Successful! (via Observable)");
         this.user = user;

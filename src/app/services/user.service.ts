@@ -17,11 +17,11 @@ export class UserService {
     return this.userid;
   }
 
-  getData(): Observable<User[]> {
+  getUsers(): Observable<User[]> {
     return of<User[]>(this.user);
   }
   
-  getDataid(id): Observable<User[]> {
+  getUserid(id): Observable<User[]> {
     this.usridArray = this.user.filter(function(object) {
       //console.log("obj artid "+object.artid);
       if(object.id===id){

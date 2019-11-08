@@ -58,7 +58,7 @@ export class ArticleDetailComponent implements OnInit {
       );
     });
 
-    this.dataService.getDataid(this.id).subscribe(
+    this.dataService.getCommentbyartid(this.id).subscribe(
         (comments: Comment) => {
           console.log('Success! Get Comment Successful!');
           this.comments = comments;
@@ -72,7 +72,7 @@ export class ArticleDetailComponent implements OnInit {
 deleteComment(id) {
       this.dataService.deleteComment(id);
       
-      this.dataService.getDataid(this.id).subscribe(
+      this.dataService.getCommentbyartid(this.id).subscribe(
         (comments: Comment) => {
           console.log('Success! Get Comment Successful!');
           this.comments = comments;
@@ -95,7 +95,7 @@ deleteComment(id) {
     });
     dialogRef.componentInstance.event.subscribe((result) => {
       this.dataService.addComment(result.data);
-      this.dataService.getDataid(this.id).subscribe(
+      this.dataService.getCommentbyartid(this.id).subscribe(
         (comments: Comment) => {
           console.log('Success! Get Comment Successful!');
           this.comments = comments;
