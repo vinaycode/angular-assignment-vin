@@ -97,10 +97,14 @@ Group - 6 Blogger
 															</td>
 														</tr>
 													</table>
-                          <br><br><br><br><br>
-                          <div class="clearfix"></div>
-                    <!-- trying to load child componenet to show comments, comment below line for testing -->
-                        <app-com #comref [cart]="art.id"></app-com>
+													<br><br><br><br><br>
+													<div class="clearfix"></div>
+													<!-- trying to load child componenet to show comments, comment below line for testing -->
+													<div *ngIf='loadComponent'>
+														<div *ngIf='art.id==childnum'>
+															<app-com #comref [cart]="art.id"></app-com>
+														</div>
+													</div>
 												</div>
 
 

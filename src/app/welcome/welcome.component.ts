@@ -19,6 +19,8 @@ export class WelcomeComponent implements OnInit {
   user: User[] = [];
   liklength:number;
   mylikes: Likes;
+  loadComponent:boolean = false;
+  childnum:number;
   mydislikes: Dislikes;
   error: AppError;
 
@@ -73,11 +75,12 @@ export class WelcomeComponent implements OnInit {
   }
 
   onComclick(art){
-
+    this.childnum = art.id;
+    this.loadComponent = true;
   }
   
   ngAfterViewInit() {
-    console.log(this.coms);
+  //  console.log(this.coms);
   }
 
 
