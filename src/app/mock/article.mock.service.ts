@@ -53,7 +53,7 @@ export class ArticleMockService {
     ]);
   }
 
-  addArticles(data) {
+  updateArticle(data) {
   
   }
 

@@ -9,7 +9,7 @@ export class CommentMockService {
   private comment : Comment[] = data;
   
   constructor() {}
-  getData(): Observable<Comment[]> {
+  getComment(): Observable<Comment[]> {
     return of<Comment[]>([
       {
         id: 0,
@@ -28,7 +28,7 @@ export class CommentMockService {
     ]);
   }
 
-  getDatabyid(id): Observable<Comment> {
+  getCommentbyid(id): Observable<Comment> {
     return of<Comment>({
       id: 0,
       artid: 1,
@@ -38,7 +38,7 @@ export class CommentMockService {
     });
   }
 
-  getDataid(artid): Observable<Comment[]> {
+  getCommentbyartid(artid): Observable<Comment[]> {
     return of<Comment[]>([
       {
         id: 0,

@@ -11,7 +11,7 @@ export class UserMockService {
     return 1;
   }
 
-  getData(): Observable<User[]> {
+  getUser(): Observable<User[]> {
     return of<User[]>([
       {
         id: 1,
@@ -44,7 +44,7 @@ export class UserMockService {
     ]);
   }
 
-  getDataid(id): Observable<User[]> {
+  getUserid(id): Observable<User[]> {
     return of<User[]>([
       {
         id: 1,
